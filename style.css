@@ -9,6 +9,7 @@
 :root{
     --orange: rgb(255, 154, 40);
     --blue: rgb(121, 174, 224);
+    --blue-e: rgba(172, 196, 219, 0.808);
 }
 
 ::-webkit-scrollbar{
@@ -47,6 +48,10 @@
 
 html{
     font-size: 10px;
+}
+
+body{
+    max-width: 100vw;
 }
 
 menu{
@@ -104,7 +109,16 @@ menu .logo{
     color: var(--orange);
 }
 
-.main-container{
+section{
+    max-width: 100%;
+    overflow-x: hidden;
+}
+
+button{
+    cursor: pointer;
+}
+
+.box1{
     background: url(img/img1.png);
     background-size: 90%;
     background-repeat: no-repeat;
@@ -114,8 +128,7 @@ menu .logo{
     flex-direction: column;
 }
 
-
-.main-box{
+.box1-content{
     position: relative;
     top: 20%; left: 57%;
     width: 40%;
@@ -125,48 +138,43 @@ menu .logo{
     align-items: end;
 }
 
-.main-box h1{
+.box1-h1{
     color: var(--orange);
     font-size: 8em;
 }
 
-.main-box p{
+.box1-p{
     font-size: 2em;
     text-align:end;
 }
 
-.main-box .btn-learn{
+.box1-button{
     background-color: var(--blue);
     border: none;
     width: 30%;
-    margin-left: 20px ;
     padding: 10px 20px;
     border-radius: 20px;
     font-size: 2em;
     color: white;
 }
 
-button{
-    cursor: pointer;
-}
-
-.help-container{
+.box2{
     background: var(--blue);
     width: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    padding: 5% 5%;
+    padding: 5% 0;
     gap: 50px;
 }
 
-.help-container h2{
+.box2-h2{
     color: white;
     font-size: 6em;
 }
 
-.container-p{
+.box2-p{
     font-size: 3em;
     color: white;
     text-transform: uppercase;
@@ -174,40 +182,42 @@ button{
     font-weight: 100;
 }
 
-.help-boxs{
+.box2-cards{
     width: 100%;
     display: flex;
-    gap: 20px;
+    justify-content: center;
+    gap: 15px;
 }
 
-.help-box{
+.box2-card{
     border-radius: 10px;
-    padding: 3%;
+    padding: 2%;
     display: flex;
+    width: 23%;
     flex-direction: column;
     align-items: start;
     gap: 20px;
 }
 
-.help-box img{
+.box2-card img{
     width: 100px;
     border-radius: 50%;
     padding: 3%;
 }
 
-.help-box h3{
+.box2-card  h3{
     text-transform: uppercase;
     font-size: 3em;
     letter-spacing: 2px;
     font-weight: 400;
 }
 
-.help-box p{
+.box2-card  p{
     font-size: 2em;
 }
 
 .blue{
-    background: rgb(173, 198, 202);
+    background: var(--blue-e);
 }
 
 .blue img{
@@ -222,17 +232,17 @@ button{
     background-color: var(--blue);
 }
 
-.explore-container{
+.box3{
     width: 100%;
 }
 
-.explore-box{
+.box3-content{
     width: 100%;
     display: flex;
     flex-direction: row;
 }
 
-.explore-left{
+.box3-left{
     display: flex;
     flex-direction: column;
     width: 50%;
@@ -240,15 +250,15 @@ button{
     gap: 50px;
 }
 
-.explore-left h3{
+.box3-left h3{
     font-size: 3.5em;
 }
 
-.explore-left h3 span{
+.box3-left h3 span{
     color: var(--blue);
 }
 
-.explore-btn{
+.box3-button{
     background-color: var(--blue);
     border: none;
     width: 40%;
@@ -258,24 +268,20 @@ button{
     color: white;
 }
 
-.explore-right{
+.box3-content2{
+    width: 100%;
+    display: flex;
+}
+
+.box3-left_last{
+    font-size: 2em;
+    display: flex;
+    flex-direction: column;
     width: 50%;
     padding: 5%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.explore-left p{
-    font-size: 2.5em;
-}
-
-.explore-left .p1{
-    font-weight: 300;
-}
-
-.explore-left .p2{
-    font-weight: 700;
+    gap: 30px;
+    margin: 0;
+    line-height: 1.75em;
 }
 
 .circle{
@@ -286,36 +292,43 @@ button{
     border-radius: 50%;
 }
 
-.explore-right ul{
-    list-style: none;
-    line-height: 50px;
-    font-size: 2.5em;
+.box3-right_last{
+    width: 50%;
+    padding: 5%;
+    display: flex;
+    justify-content: center;
+    margin: 0;
 }
 
-.explore-right ul li{
+.box3-right_last ul{
+    list-style: none;
+    line-height: 50px;
+    font-size: 2em;
+}
+
+.box3-right_last ul li{
     display: flex;
     flex-direction: row;
-    align-items: center;
     justify-content: start;
     gap: 10px;
 }
 
-.explore-right ul li i img{
-    width: 20px;
+.img-seta{
+    width: 15px;
 }
 
-.guide{
+.box4{
     background: var(--blue);
     display: flex;
     flex-direction: row;
     padding: 5%;
 }
 
-.guide img{
+.box4 img{
     max-width: 60%;
 }
 
-.guide-text{
+.box4-right{
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -323,62 +336,62 @@ button{
     color: white;
 }
 
-.travel-stor{
+.box4-story{
     display: flex;
     flex-direction: column;
     gap: 20px;
 }
 
-.travel-stor h3{
+.box4-story h3{
     text-transform: uppercase;
     font-weight: 400;
     letter-spacing: 2px;
     font-size: 3em;
 }
 
-.travel-stor p{
+.box4-story p{
     font-size: 2em;
 } 
 
-.guide-text h2{
+.box4-right h2{
     font-size: 7.5em;
     width: 100%;
     color: white;
     text-align: end;
 }
 
-.contact{
+.box5{
     min-width: 100%;
     display: flex;
 }
 
-.contact-left, .contact-right{
+.box5-left, .box5-right{
     width: 50%;
     display: flex;
     padding: 5%;
 }
 
-.contact-left{
+.box5-left{
     flex-direction: column;
     gap: 30px;
 }
 
-.contact-left h2{
+.box5-left h2{
     font-size: 5em;
     color: var(--blue);
 }
 
-.contact-left p{
+.box5-left p{
     font-size: 2em;
 }
 
-.call-box{
+.box5-call{
     display: flex;
     gap: 20px;
     text-align: center;
 }
 
-.call-box img{
+.box5-call img{
     background: var(--blue);
     width: 100px;
     height: 100px;
@@ -386,23 +399,23 @@ button{
     border-radius: 50%;
 }
 
-.call-box h3{
+.box5-call h3{
     font-size: 3.5em;
     
 }
 
-.call-box p{
+.box5-call p{
     color: var(--blue);
     font-weight: 700;
     font-size: 3em;
 }
 
 
-.contact-right img{
+.box5-right img{
     width: 100%;
 }
 
-.get{
+.box6{
     padding: 8%;
     display: flex;
     flex-direction: column;
@@ -412,17 +425,17 @@ button{
     gap: 30px;
 }
 
-.get h2{
+.box6 h2{
     font-size: 5em;
     color: white;
 }
 
-.get p{
+.box6 p{
     font-size: 2em;
     color: white;
 }
 
-.get-inputs{
+.box6-inputs{
     width: 100%;
     display: flex;
     align-items: center;
@@ -430,7 +443,7 @@ button{
     gap: 30px;
 }
 
-.get-inputs input{
+.box6-inputs input{
     width: 25%;
     padding: 0 2%;
     height: 50px;
@@ -444,7 +457,7 @@ button{
     color: white;
 }
 
-.headline{
+.box7{
     min-width: 100%;
     padding: 5%;
     display: flex;
@@ -454,27 +467,27 @@ button{
     gap: 30px;
 }
 
-.headline img{
+.box7 img{
     width: 50%;
 }
 
-.headline h3{
+.box7 h3{
     text-transform: uppercase;
     font-size: 2em;
     letter-spacing: 2px;
     font-weight: 300;
 }
 
-.headline h2{
+.box7 h2{
     font-size: 4em;
 }
 
-.headline p{
+.box7 p{
     font-size: 2em;
     text-align: center;
 }
 
-.btn-headline{
+.box7-button{
     background-color: var(--blue);
     border: none;
     width: 20%;
@@ -484,7 +497,7 @@ button{
     color: white;
 }
 
-.percentage{
+.box8{
     background: var(--blue);
     display: flex;
     flex-direction: column;
@@ -494,19 +507,19 @@ button{
     gap: 50px;
 }
 
-.percentage h2{
+.box8 h2{
     font-size: 5em;
     color: white;
 }
 
-.box-percentage{
+.box8-cards{
     display: flex;
     align-items: end;
     gap: 20px;
     padding: 0 5%;
 }
 
-.card-percentage{
+.box8-card{
     background: white;
     display: flex;
     flex-direction: column;
@@ -516,12 +529,12 @@ button{
     gap: 20px;
 }
 
-.card-percentage p{
-    font-size: 2em;
+.box8-card p{
+    font-size: 1.75em;
 }
 
-.card-percentage h3{
-    font-size: 4em;
+.box8-card h3{
+    font-size: 3em;
 }
 
 .card1{
@@ -548,7 +561,7 @@ button{
     color: rgb(48, 247, 48);
 }
 
-.contactUs{
+.box9{
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-template-rows: 1fr 1fr;
@@ -557,18 +570,18 @@ button{
     "location phone";
 }
 
-.contact-img, .form, .location, .phone{
+.box9-img, .form, .location, .phone{
     padding: 5%;
 }
 
-.contact-img{
+.box9-img{
     grid-area: image;
     gap: 30px;
     display: flex;
     flex-direction: column;
 }
 
-.contact-img h2{
+.box9-img h2{
     font-size: 5em;
 }
 
@@ -578,7 +591,7 @@ button{
     height: 150px;
 }
 
-.contact-img p{
+.box9 p{
     font-size: 2em;
 }
 
@@ -659,4 +672,982 @@ button{
 
 .phone p{
     font-size: 2em;
+}
+
+@media only screen and (max-width:991px){
+    .box1{
+        margin-top: 20px;
+        background-size: 100% 100%;
+    }
+    
+    
+    .box1-content{
+        position: relative;
+        top: 20%; left: 57%;
+        width: 40%;
+        gap: 30px;
+        display: flex;
+        flex-direction: column;
+        align-items: end;
+    }
+    
+    .box1-h1{
+        font-size: 6em;
+    }
+    
+    .box1-p{
+        font-size: 1.75em;
+    }
+    
+    .box1-button{
+        font-size: 1.75em;
+        width: 40%;
+    }
+
+    .box2{
+        gap: 30px;
+    }
+
+    .box2-h2{
+        color: white;
+        font-size: 5em;
+    }
+    
+    .box2-p{
+        font-size: 2em;
+    }
+    
+    .box2-cards{
+        flex-wrap: wrap;
+        gap: 25px;
+    }
+    
+    .box2-card{
+        padding: 2%;
+        width: 45%;
+        gap: 10px;
+    }
+    
+    .box2-card img{
+        border-radius: 50%;
+        padding: 3%;
+    }
+    
+    .box2-card  h3{
+        font-size: 2.5em;
+        letter-spacing: 2px;
+        font-weight: 400;
+    }
+    
+    .box2-card  p{
+        font-size: 1.5em;
+        line-height: 1.75;
+    }
+
+    .box3{
+        width: 100%;
+    }
+    
+    .box3-content{
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+    }
+    
+    .box3-left{
+        display: flex;
+        flex-direction: column;
+        width: 50%;
+        padding: 5%;
+        gap: 50px;
+    }
+    
+    .box3-left h3{
+        font-size: 3em;
+    }
+    
+    .box3-left h3 span{
+        color: var(--blue);
+    }
+    
+    .box3-button{
+        background-color: var(--blue);
+        border: none;
+        width: 40%;
+        padding: 10px;
+        border-radius: 20px;
+        font-size: 2em;
+        color: white;
+    }
+     
+    .box3-rigth img{
+        width: 100%;
+        height: 100%;
+    }
+
+    .box3-content2{
+        width: 100%;
+        display: flex;
+    }
+    
+    .box3-left_last{
+        font-size: 1.5em;;
+    }
+     
+    .box3-right_last ul{
+        font-size: 1.5em;
+    }
+
+    .box4{
+        padding: 5% 5% 0 5%;
+    }
+    
+    .box4 img{
+        max-width: 50%;
+    }
+    
+    .box4-story h3{
+        font-size: 1.75em;
+    }
+    
+    .box4-story p{
+        font-size: 1.5em;
+    } 
+    
+    .box4-right h2{
+        font-size: 5em;
+        margin-bottom: 2em;
+    }
+
+.box5-left h2{
+    font-size: 3.5em;
+}
+
+.box5-left p{
+    font-size: 1.5em;
+    line-height: 1.75em;
+}
+
+.box5-call{
+    gap: 10px;
+}
+
+.box5-call img{
+    width: 75px;
+    height: 75px;
+}
+
+.box5-call h3{
+    font-size: 3em;
+    
+}
+
+.box5-call p{
+    font-size: 2.75em;
+}
+
+.box5-right{
+    width: 50%;
+    padding: 5% 0 0 0;
+}
+
+
+.box5-right img{
+    width: 100%;
+}
+
+.box6 h2{
+    font-size: 3em;
+}
+
+.box6 p{
+    font-size: 1.5em;
+}
+
+.box6-inputs{
+    gap: 20px;
+}
+
+.box6-inputs input{
+    width: 30%;
+    height: 45px;
+    font-size: 1.5em;
+}
+
+.box7 img{
+    width: 70%;
+}
+
+.box7 h3{
+    font-size: 1.75em;
+}
+
+.box7 h2{
+    font-size: 3em;
+}
+
+.box7 p{
+    font-size: 1.5em;
+}
+
+.box7-button{
+    font-size: 1.75em;
+}
+
+.box8{
+    background: var(--blue);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 2% 1%;
+    gap: 50px;
+}
+
+.box8 h2{
+    font-size: 4em;
+    color: white;
+}
+
+.box8-cards{
+    gap: 15px;
+    padding: 0 3%;
+}
+
+.box8-card{
+    padding: 2%;
+}
+
+.box8-card p{
+    font-size: 1.5em;
+    line-height: 1.75;
+}
+
+.box8-card h3{
+    font-size: 3.5em;
+}
+
+.card1{
+    height: 50vh;
+}
+
+.card2{
+    height: 40vh;
+}
+
+.card3{
+    height: 30vh;
+}
+
+.box9-img{
+    gap: 20px;
+}
+
+.box9-img h2{
+    font-size: 3.5em;
+}
+
+.circle2{
+    width: 100px;
+    height: 100px;
+}
+
+.box9 p{
+    font-size: 1.5em;
+    line-height: 1.75em;
+}
+
+.form{
+    gap: 15px;
+}
+
+.form h3{
+    font-size: 2em;
+}
+
+.form p{
+    font-size: 1.5em;
+}
+
+.form input{
+    height: 2em;
+    font-size: 1.5em;
+}
+
+.location i img{
+    width: 40%;
+}
+
+.location-right h3{
+    font-size: 2em;
+}
+
+.location-right p{
+    font-size: 1.5em;
+}
+
+.phone i img{
+    width: 30%;
+}
+
+.phone h3{
+    font-size: 2em;
+}
+
+.phone p{
+    font-size: 1.5em;
+}
+
+}
+
+@media only screen and (max-width:768px){
+    .box1{
+        height: 70vh;
+        padding: 2.5% 0;
+    }
+    
+    .box1-h1{
+        font-size: 4em;
+    }
+    
+    .box1-p{
+        font-size: 1.5em;
+    }
+    
+    .box1-button{
+        font-size: 1.5em;
+        width: 40%;
+    }
+
+    .box2{
+        gap: 25px;
+    }
+
+    .box2-h2{
+        color: white;
+        font-size: 4em;
+    }
+    
+    .box2-p{
+        font-size: 1.75em;
+    }
+    
+    .box2-cards{
+        flex-wrap: wrap;
+        gap: 15px;
+    }
+    
+    .box2-card{
+        padding: 2%;
+        width: 45%;
+        gap: 10px;
+    }
+    
+    .box2-card img{
+        border-radius: 50%;
+        padding: 3%;
+    }
+    
+    .box2-card  h3{
+        font-size: 2em;
+        letter-spacing: 2px;
+        font-weight: 400;
+    }
+    
+    .box2-card  p{
+        font-size: 1.25em;
+        line-height: 1.5;
+    }
+
+    .box3{
+        width: 100%;
+    }
+    
+    .box3-content{
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+    }
+    
+    .box3-left{
+        display: flex;
+        flex-direction: column;
+        width: 50%;
+        padding: 3%;
+        gap: 40px;
+    }
+    
+    .box3-left h3{
+        font-size: 2.5em;
+    }
+    
+    .box3-button{
+        width: 50%;
+        border-radius: 20px;
+        font-size: 1.5em;
+        color: white;
+    }
+     
+    .box3-rigth img{
+        width: 100%;
+        height: 100%;
+    }
+
+    .box3-content2{
+        width: 100%;
+        display: flex;
+    }
+    
+    .box3-left_last{
+        font-size: 1.5em;;
+    }
+     
+    .box3-right_last ul{
+        font-size: 1.5em;
+    }
+
+    .box4{
+        padding: 5% 5% 0 5%;
+    }
+    
+    .box4 img{
+        max-width: 60%;
+    }
+    
+    .box4-story h3{
+        font-size: 1.75em;
+    }
+    
+    .box4-story p{
+        font-size: 1.5em;
+    } 
+    
+    .box4-right h2{
+        font-size: 5em;
+        margin-bottom: 2em;
+    }
+
+    .box8{
+        gap: 30px;
+    }
+    
+    .box8 h2{
+        font-size: 3.5em;
+    }
+    
+    .box8-card p{
+        font-size: 1.25em;
+    }
+    
+    .box8-card h3{
+        font-size: 2.5em;
+    }
+    
+}
+/*
+@media only screen and (max-width:600px){
+    .box1-h1{
+        font-size: 3em;
+    }
+    
+    .box1-p{
+        font-size: 1.25em;
+    }
+    
+    .box1-button{
+        font-size: 1.25em;
+        width: 50%;
+    }
+
+    .box2{
+        gap: 15px;
+    }
+
+    .box2-h2{
+        font-size: 3em;
+    }
+    
+    .box2-p{
+        font-size: 1.5em;
+    }
+    
+    .box2-card img{
+        width: 30%;
+    }
+    
+    .box2-card  h3{
+        font-size: 1.5em;
+    }
+    
+    .box2-card  p{
+        font-size: 1.25em;
+        line-height: 1.5;
+    }
+
+    .box3{
+        width: 100%;
+        justify-content: space-between;
+    }
+
+    .box3-content{
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+    }
+    
+    .box3-left h3{
+        font-size: 2em;
+    }
+
+    .box3-left{
+        width: 40%;
+    }
+    .box3-rigth{
+        width: 60%;
+        display: flex;
+        justify-content: end;
+    }
+    .box3-button{
+        width: 50%;
+        border-radius: 20px;
+        font-size: 1.25em;
+    }
+     
+    .box3-rigth img{
+        width: 80%;
+        height: 80%;
+    }
+
+    .box3-content2{
+        width: 100%;
+        display: flex;
+    }
+    
+    .box3-left_last{
+        font-size: 1.25em;;
+    }
+     
+    .box3-right_last ul{
+        font-size: 1.25em;
+    }
+
+    .box3-right_last ul li{
+        line-height: 1.75em;
+    }
+    .box4 img{
+        max-width: 60%;
+        height: 50%;
+        align-self: center;
+    }
+    
+    .box4-story h3{
+        font-size: 1.5em;
+    }
+    
+    .box4-story p{
+        font-size: 1.25em;
+    } 
+    
+    .box4-right h2{
+        font-size: 3em;
+        margin-bottom: 2em;
+    }
+    
+    .box5-left{
+        gap: 10px;
+    }
+    
+    .box5-left h2{
+        font-size: 3em;
+    }
+    
+    .box5-left p{
+        font-size: 1.25em;
+    }
+    
+    .box5-call{
+        gap: 10px;
+    }
+    
+    .box5-call img{
+        width: 50px;
+        height: 50px;
+    }
+    
+    .box5-call h3{
+        font-size: 2em;
+        
+    }
+    
+    .box5-call p{
+        color: var(--blue);
+        font-weight: 700;
+        font-size: 1.5em;
+    }
+    
+    
+    .box5-right img{
+        width: 100%;
+        height: 50%;
+        align-self: center;
+    }
+
+    .box7-button{
+        width: 30%;
+        font-size: 1.25em;
+    }
+
+    .box8{
+        background: var(--blue);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding: 2%;
+        gap: 50px;
+    }
+    
+    .box8 h2{
+        font-size: 3.5em;
+        color: white;
+    }
+    
+    .box8-cards{
+        display: flex;
+        align-items: end;
+        gap: 10px;
+        padding: 0 2%;
+    }
+    
+    .box8-card{
+        background: white;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        padding: 3%;
+        border-radius: 20px;
+        gap: 20px;
+    }
+    
+    .box8-card p{
+        font-size: 1.2em;
+    }
+    
+    .box9-img h2{
+        font-size: 3em;
+    }
+
+    .box9 p{
+        font-size: 1.25em;
+    }
+
+    .circle2{
+        width: 75px;
+        height: 75px;
+    }
+    
+    .form h3{
+        font-size: 1.75em;
+        font-weight: 300;
+    }
+    
+    .form p{
+        font-size: 1.25em;
+    }
+    
+    .form input{
+        height: 1.25em;
+    }
+    
+    .location{
+        grid-area: location;
+        display: flex;
+        align-items: center;
+        justify-content: start;
+    }
+    
+    .location i img{
+        width: 30%;
+    }
+    
+    .location-right h3{
+        font-size: 2em;
+    }
+    
+    .location-right p{
+        font-size: 1.25em;
+    }
+    
+    .phone i img{
+        width: 30%;
+    }
+    
+    .phone h3{
+        font-size: 2em;
+    }
+    
+    .phone p{
+        font-size: 1.25em;
+    }
+
+}
+*/
+@media only screen and (max-width:600px){
+    .box1{
+        width: 100vw;
+        height: 45vh;
+        display: flex;
+        background-position-y: bottom;
+        justify-content: start;
+        align-items: start;
+        flex-direction: column;
+        margin-top: 50px;
+    }
+    
+    .box1-content{
+        position: relative;
+        top: 10%; left: 57%;
+        width: 40%;
+        gap: 25px;
+        display: flex;
+        flex-direction: column;
+    }
+   
+    .box1-h1{
+        font-size: 3em;
+    }
+    
+    .box1-p{
+        font-size: 1.25em;
+    }
+    
+    .box1-button{
+        font-size: 1.25em;
+        width: 80%;
+    }
+
+    .box2{
+        gap: 10px;
+    }
+    
+    .box2-card{
+        padding: 5%;
+        width: 80%;
+    }
+
+    .box3-content{
+        flex-direction: column;
+    }
+
+    .box3-left{
+        width: 100%;
+    }
+    .box3-rigth{
+        width: 100%;
+        display: flex;
+    }
+    .box3-button{
+        width: 50%;
+        align-self: center;
+    }
+     
+    .box3-rigth img{
+        align-self: center;
+    }
+
+    .box3-content2{
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+    }
+    
+    .box3-left_last{
+        width: 100%;
+        font-size: 1.25em;;
+    }
+
+    .box3-right_last{
+        width: 100%;
+    }
+     
+    
+.box4{
+    flex-direction: column;
+    justify-content: center;
+}
+
+.box4 img{
+    max-width: 80%;
+}
+
+.box4-right{
+    text-align: center;
+}
+
+.box4-story{
+    gap: 10px;
+}
+
+.box4-story h3{
+    font-size: 2em;
+}
+
+.box4-story p{
+    font-size: 1.5em;
+} 
+
+.box4-right h2{
+    font-size: 4em;
+}
+
+.box5{
+    min-width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.box5-left, .box5-right{
+    width: 100%;
+    display: flex;
+    padding: 5%;
+}
+
+.box6{
+    gap: 20px;
+}
+
+.box6 h2{
+    font-size: 3em;
+}
+
+.box6 p{
+    font-size: 1.5em;
+}
+
+.box6-inputs{
+    flex-direction: column;
+}
+
+.box6-inputs input{
+    width: 90%;
+    font-size: 1.5em;
+}
+
+.box7-button{
+    width: 30%;
+    font-size: 1.25em;
+}
+
+.box8{
+    background: var(--blue);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 5% 2%;
+    gap: 50px;
+}
+    
+.box8 h2{
+    font-size: 3em;
+    text-align: center;
+    color: white;
+}
+    
+.box8-cards{
+   display: flex;
+   flex-direction: column;
+    align-items: end;
+    gap: 10px;
+    padding: 0 2%;
+    }
+        
+.box8-card p{
+    font-size: 1.2em;
+}
+
+.box8-card h3{
+    font-size: 2.5em;
+}
+      
+.card1{
+    height: 35vh;
+}
+
+.card2{
+    height: 30vh;
+}
+
+.card3{
+    height: 20vh;
+}
+
+.box9{
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr;
+    grid-template-areas: 
+    "image"
+    "form"
+    "location"
+    "phone";
+    gap: 20px;
+}
+
+.box9-img, .form, .location, .phone{
+    padding: 0 5%;
+    width: 100%;
+}
+
+.box9-img h2{
+    font-size: 3em;
+}
+
+.circle2{
+    width: 75px;
+    height: 75px;
+}
+
+.box9 p{
+    font-size: 1.25em;
+}
+
+.form h3{
+    font-size: 2em;
+}
+
+.form p{
+    font-size: 1.25em;
+}
+
+.form input{
+    height: 2em;
+    font-size: 1.25em;
+}
+
+.location i img{
+    width: 30%;
+}
+
+.location-right h3{
+    font-size: 2em;
+}
+
+.location-right p{
+    font-size: 1.25em;
+}
+
+.phone i img{
+    width: 30%;
+}
+
+.phone h3{
+    font-size: 1em;
+}
+
+.phone p{
+    font-size: 1.25em;
+}
+
 }

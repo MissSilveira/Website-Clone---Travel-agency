@@ -11,6 +11,8 @@ function contagem(total, elemento){
     })
 }
 
+let funcao
+
 let elemento1 = document.getElementById('conta1')
 let elemento2 = document.getElementById('conta2')
 let elemento3 = document.getElementById('conta3')
